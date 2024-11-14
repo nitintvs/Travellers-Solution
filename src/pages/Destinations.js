@@ -77,7 +77,6 @@ function ContactUs() {
           </Typography>
           <Box
             component="iframe"
-            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBhAbFGb3Y99hMoltzcdFRCmPJq04N-sqs&q=19.0760,72.8777"
             width="100%"
             height="500"
             style={{ border: 0,height:"20rem" }}
