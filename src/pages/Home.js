@@ -27,8 +27,7 @@ import tour12 from "../assets/images/tours/tamara-malaniy-ke4IZmvNPAg-unsplash.j
 
 
 
-const carouselImages = [
-    '../home/home1.jpg',  // Replace with actual image paths
+const carouselImages = [  // Replace with actual image paths
     '../home/home2.jpg',  // Replace with actual image paths
     '../home/home3.jpg',  // Replace with actual image paths
     '../home/home4.jpg',  // Replace with actual image paths
