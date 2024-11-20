@@ -23,7 +23,7 @@ function ContactUs() {
           sx={{
             position: "relative",
             textAlign: "center",
-            height: "20rem",
+            height: "25rem",
           }}
         >
           <Box
