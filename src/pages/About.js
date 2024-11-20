@@ -1,17 +1,30 @@
 // src/pages/About.js
-import React from 'react';
-import { Container, Typography, Box, Grid, Card, CardContent, Avatar, Link, CardMedia } from '@mui/material';
-import Slider from 'react-slick';
-import dummyimage from "../assets/images/testimonials/leio-mclaren-L2dTmhQzx4Q-unsplash.jpg"
-import dummypartner1 from "../assets/images/parteners/SWO_Logo_Color.png"
-import dummypartner2 from "../assets/images/parteners/etoa.png"
-import dummypartner3 from "../assets/images/parteners/historic-royal-places.png"
-import dummypartner4 from "../assets/images/parteners/iata.png"
-import dummypartner5 from "../assets/images/parteners/ihg-hotels.png"
-import dummypartner6 from "../assets/images/parteners/london-eye.png"
-import dummypartner7 from "../assets/images/parteners/ukinbound.png"
-import dummypartner8 from "../assets/images/parteners/ustoa (1).png"
-import dummypartner9 from "../assets/images/parteners/ustoa.png"
+import React from "react";
+import {
+  Container,
+  Typography,
+  Box,
+  Grid,
+  Card,
+  CardContent,
+  Avatar,
+  Link,
+  CardMedia,
+} from "@mui/material";
+import Slider from "react-slick";
+import dummyimage from "../assets/images/testimonials/leio-mclaren-L2dTmhQzx4Q-unsplash.jpg";
+import dummypartner1 from "../assets/images/parteners/SWO_Logo_Color.png";
+import dummypartner2 from "../assets/images/parteners/etoa.png";
+import dummypartner3 from "../assets/images/parteners/historic-royal-places.png";
+import dummypartner4 from "../assets/images/parteners/iata.png";
+import dummypartner5 from "../assets/images/parteners/ihg-hotels.png";
+import dummypartner6 from "../assets/images/parteners/london-eye.png";
+import dummypartner7 from "../assets/images/parteners/ukinbound.png";
+import dummypartner8 from "../assets/images/parteners/ustoa (1).png";
+import Aboutusbanner from "../assets/images/images/Aboutus.jpg";
+import MissionImage from "../assets/images/images/Mission.jpg";
+import Companyhistory from "../assets/images/images/companyhistory.jpg";
+import { testimonials } from "./Home";
 
 function About() {
   const teamSettings = {
@@ -26,14 +39,14 @@ function About() {
 
   const partnersSettings = {
     dots: true,
-    cssEase: "ease-in-out",  
+    cssEase: "ease-in-out",
     infinite: true,
     speed: 500,
     autoplaySpeed: 3000,
     slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: true,
-    arrows:false,
+    arrows: false,
     responsive: [
       {
         breakpoint: 600,
@@ -43,32 +56,39 @@ function About() {
   };
 
   return (
-    <Container>
+    <>
       {/* About Travellers Solution Section with Background Image */}
       <Box
         sx={{
+          position: "relative",
           textAlign: "center",
-          my: { xs: 3, md: 5 },
-          px: { xs: 2, md: 4 },
-          py: 6,
-          backgroundImage: 'url("https://source.unsplash.com/random?travel")',
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          color: "white",
+          height: "20rem",
         }}
       >
+        <Box
+          component="img"
+          src={Aboutusbanner}
+          sx={{ width: "100%", height: "100%", objectFit: "cover" }}
+        />
         <Typography
           variant="h4"
-          sx={{ fontSize: { xs: "1.8rem", md: "2.5rem" }, fontWeight: "bold" }}
+          sx={{
+            position: "absolute",
+            top: "80%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            fontSize: { xs: "1.8rem", md: "2.5rem" },
+            fontWeight: "bold",
+            color: "white", // Ensure text is visible on the image
+          }}
         >
           About Travellers Solution
         </Typography>
       </Box>
-
       {/* Company History with Left Text and Right Image */}
-      <Box sx={{ my: { xs: 3, md: 5 } }}>
-        <Grid container spacing={4} alignItems="center">
-          <Grid item xs={12} md={6}>
+      <Box >
+        <Grid container spacing={0} alignItems="center">
+          <Grid  xs={12} md={6} p={5}>
             <Typography
               variant="h5"
               sx={{
@@ -87,29 +107,29 @@ function About() {
               creating exceptional travel experiences across Europe...
             </Typography>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid  xs={12} md={6}>
             <Box
               component="img"
-              src="https://source.unsplash.com/random?company"
+              src={Companyhistory}
               alt="Company History"
-              sx={{ width: "100%", borderRadius: 2 }}
+              sx={{ width: "100%", objectFit:"cover", height:"25rem" }}
             />
           </Grid>
         </Grid>
       </Box>
 
       {/* Vision and Mission with Right Image and Left Text */}
-      <Box sx={{ my: { xs: 3, md: 5 } }}>
-        <Grid container spacing={4} alignItems="center">
-          <Grid item xs={12} md={6} order={{ xs: 2, md: 1 }}>
+      <Box >
+        <Grid container spacing={0} alignItems="center">
+          <Grid  xs={12} md={6} order={{ xs: 2, md: 1 }}>
             <Box
               component="img"
-              src="https://source.unsplash.com/random?vision"
+              src={MissionImage}
               alt="Vision and Mission"
-              sx={{ width: "100%", borderRadius: 2 }}
+              sx={{ width: "100%", objectFit:"cover",  height:"25rem" }}
             />
           </Grid>
-          <Grid item xs={12} md={6} order={{ xs: 1, md: 2 }}>
+          <Grid  xs={12} md={6} order={{ xs: 1, md: 2 }} p={5}>
             <Typography
               variant="h5"
               sx={{
@@ -145,7 +165,7 @@ function About() {
           Our Team
         </Typography>
         <Slider {...teamSettings}>
-          {[1, 2, 3, 4, 5, 6].map((member) => (
+          {testimonials.map((member,index) => (
             <Card
               sx={{
                 display: "flex",
@@ -155,15 +175,21 @@ function About() {
                 p: 0,
                 width: "98% !important",
                 margin: "auto",
+                background:"#ECECEC",
+                boxShadow:"none"
               }}
-              key={member}
+              key={index}
             >
               <CardMedia
                 component={"img"}
-                sx={{ width: "100%", objectFit:"cover", height: "20rem", mb: 2 }}
-                src={dummyimage}
-                alt={`Team Member ${member}`}
-              
+                sx={{
+                  width: "100%",
+                  objectFit: "cover",
+                  height: "20rem",
+                  mb: 2,
+                }}
+                src={member.avatar}
+                alt={`Team Member ${member.name}`}
               />
               <CardContent sx={{ textAlign: "center" }}>
                 <Typography
@@ -173,11 +199,10 @@ function About() {
                     fontWeight: "bold",
                   }}
                 >
-                  Member {member}
+                  {member.name}
                 </Typography>
                 <Typography variant="body2">
-                  Our travel expert dedicated to making every journey memorable
-                  and seamless.
+                 {member.expertise}
                 </Typography>
               </CardContent>
             </Card>
@@ -186,7 +211,7 @@ function About() {
       </Box>
 
       {/* Partners Carousel */}
-      <Box sx={{ my: { xs: 3, md: 5 , } }}>
+      <Box sx={{ my: { xs: 3, md: 5 } }}>
         <Typography
           variant="h5"
           sx={{
@@ -208,12 +233,10 @@ function About() {
             dummypartner6,
             dummypartner7,
             dummypartner8,
-            
           ].map((partner, index) => (
             <Box
               key={index}
               sx={{
-                textAlign: "center",
                 px: 2,
                 width: "98% !important",
                 margin: "auto",
@@ -231,7 +254,7 @@ function About() {
                   sx={{
                     width: "100%",
                     height: "10rem",
-                    objectFit:"contain",
+                    objectFit: "contain",
                     // filter: "grayscale(80%)",
                     transition: "filter 0.3s",
                     // "&:hover": { filter: "grayscale(0%)" },
@@ -242,7 +265,7 @@ function About() {
           ))}
         </Slider>
       </Box>
-    </Container>
+    </>
   );
 }
 

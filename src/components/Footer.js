@@ -13,7 +13,7 @@ function Footer() {
     <Box
       component="footer"
       sx={{
-        backgroundColor: 'background.paper',
+        backgroundColor: '#ECECEC',
         color: 'text.secondary',
         py: 4,
         mt: 'auto',
@@ -67,8 +67,8 @@ function Footer() {
           <MuiLink href="/services" color="inherit" underline="none" sx={{ display: 'block', my: 1 }}>
             Services
           </MuiLink>
-          <MuiLink href="/destinations" color="inherit" underline="none" sx={{ display: 'block', my: 1 }}>
-            Destinations
+          <MuiLink href="/contactus" color="inherit" underline="none" sx={{ display: 'block', my: 1 }}>
+          Contact Us
           </MuiLink>
         </Grid>
 

@@ -32,19 +32,69 @@ const carouselImages = [  // Replace with actual image paths
     '../home/home3.jpg',  // Replace with actual image paths
     '../home/home4.jpg',  // Replace with actual image paths
 ];
-
-const testimonials = [
-    { name: "John Doe", testimonial: "Fantastic experience! Highly recommended!", avatar:testimonial1  },
-    { name: "Jane Smith", testimonial: "The best travel company for European tours!", avatar: testimonial2 },
-    { name: "Sam Wilson", testimonial: "Unforgettable memories with Travellers Solution!", avatar: testimonial3},
-    { name: "Jane Smith", testimonial: "The best travel company for European tours!", avatar: testimonial5 },
-    { name: "Sam Wilson", testimonial: "Unforgettable memories with Travellers Solution!", avatar: testimonial6},
-    { name: "John Doe", testimonial: "Fantastic experience! Highly recommended!", avatar:testimonial7  },
-    { name: "Jane Smith", testimonial: "The best travel company for European tours!", avatar: testimonial8 },
-    { name: "Sam Wilson", testimonial: "Unforgettable memories with Travellers Solution!", avatar: testimonial9},
-    { name: "John Doe", testimonial: "Fantastic experience! Highly recommended!", avatar:testimonial10  },
-    { name: "Jane Smith", testimonial: "The best travel company for European tours!", avatar: testimonial11 }
+export const testimonials = [
+  { 
+      name: "John Doe", 
+      testimonial: "Fantastic experience! Highly recommended!", 
+      avatar: testimonial1, 
+      expertise: "Expert in planning luxury tours and providing personalized travel solutions for unforgettable journeys worldwide." 
+  },
+  { 
+      name: "Jane Smith", 
+      testimonial: "The best travel company for European tours!", 
+      avatar: testimonial2, 
+      expertise: "Specialized in crafting tailored European tours with unique cultural experiences and premium accommodations." 
+  },
+  { 
+      name: "Sam Wilson", 
+      testimonial: "Unforgettable memories with Travellers Solution!", 
+      avatar: testimonial3, 
+      expertise: "Dedicated to creating custom travel itineraries that offer once-in-a-lifetime adventures and lasting memories." 
+  },
+  { 
+      name: "Jane Smith", 
+      testimonial: "The best travel company for European tours!", 
+      avatar: testimonial5, 
+      expertise: "Highly experienced in guiding clients through the most scenic and historically rich European destinations." 
+  },
+  { 
+      name: "Sam Wilson", 
+      testimonial: "Unforgettable memories with Travellers Solution!", 
+      avatar: testimonial6, 
+      expertise: "Providing top-notch service for travelers seeking customized trips and authentic experiences worldwide." 
+  },
+  { 
+      name: "John Doe", 
+      testimonial: "Fantastic experience! Highly recommended!", 
+      avatar: testimonial7, 
+      expertise: "Experienced in curating world-class tours and exceptional customer service for luxury and adventure seekers." 
+  },
+  { 
+      name: "Jane Smith", 
+      testimonial: "The best travel company for European tours!", 
+      avatar: testimonial8, 
+      expertise: "Renowned for offering bespoke travel packages focused on history, art, and culinary delights in Europe." 
+  },
+  { 
+      name: "Sam Wilson", 
+      testimonial: "Unforgettable memories with Travellers Solution!", 
+      avatar: testimonial9, 
+      expertise: "Passionate about delivering extraordinary travel experiences, from adventurous expeditions to relaxing retreats." 
+  },
+  { 
+      name: "John Doe", 
+      testimonial: "Fantastic experience! Highly recommended!", 
+      avatar: testimonial10, 
+      expertise: "Proven expertise in organizing group tours with attention to detail and customer satisfaction in mind." 
+  },
+  { 
+      name: "Jane Smith", 
+      testimonial: "The best travel company for European tours!", 
+      avatar: testimonial11, 
+      expertise: "Committed to designing unforgettable European journeys, combining luxury, culture, and exclusive local experiences." 
+  }
 ];
+
 const tours = [
   {
     title: "European Wonders",
@@ -280,7 +330,7 @@ function Home() {
           <Box
             sx={{
               position: "absolute",
-              top: window.innerHeight / 3,
+              top: window.innerHeight / 2,
               left: 0,
               right: 0,
               bottom: 0,
@@ -295,7 +345,7 @@ function Home() {
           >
             <Typography
               variant="h3"
-              sx={{ fontSize: { xs: "1.8rem", sm: "2.5rem", md: "3rem" } }}
+              sx={{ fontSize: { xs: "1.8rem", sm: "2.5rem", md: "3rem" } ,color:"primary"}}
             >
               Explore Europe with Travellers Solution
             </Typography>
@@ -371,7 +421,7 @@ function Home() {
                           objectFit:"cover"
                         }}
                       />
-                  <CardContent>
+                  <CardContent sx={{background:"#ECECEC"}}>
                  
                     <Typography
                       variant="body1"
@@ -419,7 +469,7 @@ function Home() {
                     margin: "auto",
                   }}
                 >
-                  <CardContent>
+                  <CardContent sx={{background:"#ECECEC"}}>
                     <Box
                       sx={{ display: "flex", justifyContent: "center", mb: 2 }}
                     >

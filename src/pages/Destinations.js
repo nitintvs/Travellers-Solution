@@ -5,22 +5,50 @@ import { styled } from '@mui/system';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import ServicesImage from '../assets/images/images/contactus.jpg';
+
 const BackgroundContainer = styled(Container)(({ theme }) => ({
   backgroundImage: 'url(/path-to-your-background-image.jpg)', // replace with your image path
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   color: '#fff',
-  padding: theme.spacing(4),
-  borderRadius: theme.shape.borderRadius,
+  // padding: theme.spacing(4),
+  // borderRadius: theme.shape.borderRadius,
 }));
 
 function ContactUs() {
   return (
-    <BackgroundContainer>
+    <>
+       <Box
+          sx={{
+            position: "relative",
+            textAlign: "center",
+            height: "20rem",
+          }}
+        >
+          <Box
+            component="img"
+            src={ServicesImage}
+            sx={{ width: "100%", height: "100%", objectFit: "" }}
+          />
+          <Typography
+            variant="h4"
+            sx={{
+              position: "absolute",
+              top: "75%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              fontSize: { xs: "1.8rem", md: "2.5rem" },
+              fontWeight: "bold",
+              color: "white", // Ensure text is visible on the image
+            }}
+          >
+            Contact Us
+          </Typography>
+        </Box>
+
       <Box sx={{ my: { xs: 2, md: 4 }, px: { xs: 2, md: 4 } }}>
-        <Typography variant="h4" sx={{ textAlign: 'center', mb: { xs: 2, md: 4 }, fontSize: { xs: '1.8rem', md: '2.5rem' } }}>
-          Contact Us
-        </Typography>
+        
 
         {/* Contact Form */}
         <Box sx={{ mb: 4 }}>
@@ -85,7 +113,7 @@ function ContactUs() {
           ></Box>
         </Box>
       </Box>
-    </BackgroundContainer>
+    </>
   );
 }
 

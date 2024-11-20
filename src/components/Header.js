@@ -16,7 +16,7 @@ console.log("location",location.pathname==="/")
       const scrollPosition = window.scrollY;
       // Change the color based on scroll position
       if (scrollPosition > 50) {
-        setBgColor('#fff'); // Change to blue when scrolling
+        setBgColor('#ECECEC'); // Change to blue when scrolling
       } else {
         setBgColor('transparent'); // Keep transparent initially
       }
@@ -40,46 +40,86 @@ console.log("location",location.pathname==="/")
   return (
     <>
       {/* AppBar (Header) */}
-      <AppBar 
-        position="sticky"  // Makes the header sticky
+      <AppBar
+        position="sticky" // Makes the header sticky
         sx={{
-          top: 0,  // Keeps it at the top
+          top: 0, // Keeps it at the top
           left: 0,
           right: 0,
-          zIndex: 10,  // Ensures header stays on top of other content
-          backgroundColor:location.pathname==="/" ?  bgColor:"#fff",  // Primary color for background
+          zIndex: 10, // Ensures header stays on top of other content
+          backgroundColor: location.pathname === "/" ? bgColor : "#ECECEC", // Primary color for background
         }}
       >
         <Toolbar
           sx={{
-            justifyContent: 'space-between',  // Spaces out logo and nav items
-            padding: { xs: '10px 20px', md: '10px 40px' },  // Padding for mobile and desktop
-            borderBottom:"0.5px solid #ea7f1d "
+            justifyContent: "space-between", // Spaces out logo and nav items
+            padding: { xs: "10px 20px", md: "10px 40px" }, // Padding for mobile and desktop
+            borderBottom: "0.5px solid #ea7f1d ",
           }}
         >
           {/* Logo */}
-          <Typography variant="h6" sx={{ flexGrow: 1 ,color: location.pathname==="/" ?"#00796b":"#f7f7f7"}}>
+          <Typography
+            variant="h6"
+            sx={{
+              flexGrow: 1,
+              color: location.pathname === "/" ? "#00796b" : "#f7f7f7",
+            }}
+          >
             <CardMedia
-            component={"img"}
-            image={logo}
-            onClick={()=>navigate("/")}
-            sx={{width:{xs:"35%",sm:"20%",md:"20%",lg:"20%"},cursor:"pointer"}}
+              component={"img"}
+              image={logo}
+              onClick={() => navigate("/")}
+              sx={{
+                width: { xs: "35%", sm: "20%", md: "20%", lg: "20%" },
+                cursor: "pointer",
+              }}
             />
           </Typography>
 
           {/* Desktop Navigation Links */}
-          <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 1 }}>
-            <Button sx={{color: location.pathname==="/" ?"primary":"primary"}} component={Link} to="/">Home</Button>
-            <Button sx={{color: location.pathname==="/" ?"primary":"primary"}} component={Link} to="/about">About Us</Button>
-            <Button sx={{color: location.pathname==="/" ?"primary":"primary"}} component={Link} to="/services">Services</Button>
-            <Button sx={{color: location.pathname==="/" ?"primary":"primary"}} component={Link} to="/destinations">Destinations</Button>
+          <Box sx={{ display: { xs: "none", md: "flex" }, gap: 1 }}>
+            <Button
+              sx={{ color: location.pathname === "/" ? "primary" : "primary" }}
+              size="large"
+              component={Link}
+              to="/"
+            >
+              Home
+            </Button>
+            <Button
+              sx={{ color: location.pathname === "/" ? "primary" : "primary" }}
+              size="large"
+              component={Link}
+              to="/about"
+            >
+              About Us
+            </Button>
+            <Button
+              sx={{ color: location.pathname === "/" ? "primary" : "primary" }}
+              size="large"
+              component={Link}
+              to="/services"
+            >
+              Services
+            </Button>
+            <Button
+              sx={{ color: location.pathname === "/" ? "primary" : "primary" }}
+              size="large"
+              component={Link}
+              to="/contactus"
+            >
+              Contact Us
+            </Button>
           </Box>
 
           {/* Hamburger Icon for Mobile */}
-          <IconButton 
-            aria-label="menu" 
-            onClick={toggleDrawer(true)} 
-            sx={{ display: { xs: 'block', md: 'none' } ,color: bgColor ==="transparent"?"#000":"#000" }} // Show on mobile
+          <IconButton
+            aria-label="menu"
+            onClick={toggleDrawer(true)}
+            sx={{
+              display: { xs: "block", md: "none" },
+              color: bgColor === "transparent" ? "#000" : "#000",
+            }} // Show on mobile
           >
             <MenuIcon />
           </IconButton>
@@ -88,14 +128,14 @@ console.log("location",location.pathname==="/")
 
       {/* Drawer for Mobile Menu */}
       <Drawer
-        anchor="right"  // You can change this to "left" if you prefer the drawer from the left side
+        anchor="right" // You can change this to "left" if you prefer the drawer from the left side
         open={openDrawer}
         onClose={toggleDrawer(false)}
       >
         <Box
           sx={{ width: 250 }}
           role="presentation"
-          onClick={toggleDrawer(false)}  // Close the drawer when clicking on a link
+          onClick={toggleDrawer(false)} // Close the drawer when clicking on a link
           onKeyDown={toggleDrawer(false)}
         >
           <List>
@@ -108,8 +148,8 @@ console.log("location",location.pathname==="/")
             <ListItem button component={Link} to="/services">
               <ListItemText primary="Services" />
             </ListItem>
-            <ListItem button component={Link} to="/destinations">
-              <ListItemText primary="Contact" />
+            <ListItem button component={Link} to="/contactus">
+              <ListItemText primary="Contact Us" />
             </ListItem>
           </List>
         </Box>
