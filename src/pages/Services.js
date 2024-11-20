@@ -12,7 +12,7 @@ import AdhocTours from "../assets/images/images/Adhoc tours.jpg";
 import VanTours from "../assets/images/images/Van tours.jpg";
 import SelfDriving from "../assets/images/images/Self driving tours.jpg";
 import Swissrail from "../assets/images/images/Swiss rail.jpg";
-import ServicesImage from "../assets/images/images/OurServices.jpg";
+import ServicesImage from "../assets/images/images/OurServices.png";
 function Services() {
   return (
     <>
@@ -21,13 +21,13 @@ function Services() {
           sx={{
             position: "relative",
             textAlign: "center",
-            height: "20rem",
+            height: "25rem",
           }}
         >
           <Box
             component="img"
             src={ServicesImage}
-            sx={{ width: "100%", height: "100%", objectFit: "" }}
+            sx={{ width: "100%", height: "100%", objectFit: "cover" }}
           />
           <Typography
             variant="h4"
